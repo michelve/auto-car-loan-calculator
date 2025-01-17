@@ -21,275 +21,267 @@
 </head>
 <body class="text-dark">
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <!-- Image and text -->
+            <nav class="navbar navbar-dark" id="navbartop">
+                <a class="navbar-brand" href="/">
+                    <i data-feather="book-open"></i>  Auto Loan Calculator
+                </a>
+            </nav>
+        </div>
 
+        <div class="container">
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <!-- Image and text -->
-                <nav class="navbar navbar-dark" id="navbartop">
-                    <a class="navbar-brand" href="/">
-                        <i data-feather="book-open"></i>  Auto Loan Calculator
-                    </a>
-                </nav>
-            </div>
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="">
-                            <h1 class="fw-bold mt-5" style="max-width: 560px;">Get the Right Payment, Every Time</h1>
-                            <p class="fs-5 text-light mt-3 mb-5 fw-200" style="max-width: 560px;">
-                                With our powerful loan calculator, discover your perfect car financing plan in just a few clicks. Get insights on monthly payments, trade-in benefits, and more.
-                            </p>
-                            <ul class="list-unstyled">
-                                <li class="mb-3">
-                                    <i class="bi bi-calculator-fill text-primary me-2"></i>
-                                    Accurate estimates tailored to your budget.
-                                </li>
-                                <li class="mb-3">
-                                    <i class="bi bi-cash-coin text-primary me-2"></i>
-                                    Evaluate loan terms, APRs, and down payments easily.
-                                </li>
-                                <li class="mb-3">
-                                    <i class="bi bi-graph-up-arrow text-primary me-2"></i>
-                                    Analyze your approval rating risk and affordability.
-                                </li>
-                                <li class="mb-3">
-                                    <i class="bi bi-shield-check text-primary me-2"></i>
-                                    Find out if you need GAP Insurance based on trade-in equity.
-                                </li>
-                            </ul>
-                            
-                            <p class="mt-5" style="font-size: 13px;max-width: 560px;">
-                                <small><strong>Disclaimer:</strong> Some prices, such as GAP insurance, extended warranty, or interest rates, are based on industry averages and may not reflect exact values. However, the calculator provides highly accurate payment estimates to guide your financial decisions.</small>
-                            </p>
-                        </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="">
+                        <h1 class="fw-bold mt-5" style="max-width: 560px;">Get the Right Payment, Every Time</h1>
+                        <p class="fs-5 text-light mt-3 mb-5 fw-200" style="max-width: 560px;">
+                            With our powerful loan calculator, discover your perfect car financing plan in just a few clicks. Get insights on monthly payments, trade-in benefits, and more.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="bi bi-calculator-fill text-primary me-2"></i>
+                                Accurate estimates tailored to your budget.
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-cash-coin text-primary me-2"></i>
+                                Evaluate loan terms, APRs, and down payments easily.
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-graph-up-arrow text-primary me-2"></i>
+                                Analyze your approval rating risk and affordability.
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-shield-check text-primary me-2"></i>
+                                Find out if you need GAP Insurance based on trade-in equity.
+                            </li>
+                        </ul>
+                        
+                        <p class="mt-5" style="font-size: 13px;max-width: 560px;">
+                            <small><strong>Disclaimer:</strong> Some prices, such as GAP insurance, extended warranty, or interest rates, are based on industry averages and may not reflect exact values. However, the calculator provides highly accurate payment estimates to guide your financial decisions.</small>
+                        </p>
                     </div>
-                    <div class="col-md-7">
-                        <div class="card shadow card-blur">
-                            <div class="card-body" id="calculatorForm">
+                </div>
+                <div class="col-md-7">
+                    <div class="card shadow card-blur">
+                        <div class="card-body" id="calculatorForm">
 
-                                <!-- Form -->
-                                <form id="loanForm" class="needs-validation" novalidate>
-                                    <div class="row g-3">
-                                        <!-- Car Price -->
-                                        <div class="col-md-12">
-                                            <label for="carPrice" class="form-label required" data-bs-toggle="tooltip" title="Total price of the car before taxes and fees.">Car Price:</label>
-                                            <input type="number" class="form-control" id="carPrice" required>
-                                            <div class="invalid-feedback">Please provide a valid car price.</div>
-                                        </div>
-                                
-                                        <!-- State Tax -->
-                                        <div class="col-md-4">
-                                            <label for="stateTax" class="form-label required" data-bs-toggle="tooltip" title="Sales tax rate based on your state.">Your State:</label>
-                                            <select class="form-select" id="stateTax">
-                                                <option value="0" selected>Select State</option>
-                                                <option value="0.00">Alaska (0%)</option>
-                                                <option value="4.00">Alabama (4%)</option>
-                                                <option value="6.60">Arizona (6.6%)</option>
-                                                <option value="6.50">Arkansas (6.5%)</option>
-                                                <option value="7.25">California (7.25%)</option>
-                                                <option value="2.90">Colorado (2.9%)</option>
-                                                <option value="6.35">Connecticut (6.35%)</option>
-                                                <option value="4.25">Delaware (No Sales Tax on Cars)</option>
-                                                <option value="6.00">Florida (6%)</option>
-                                                <option value="4.00">Georgia (4%)</option>
-                                                <option value="4.00">Hawaii (4%)</option>
-                                                <option value="6.00">Idaho (6%)</option>
-                                                <option value="6.25">Illinois (6.25%)</option>
-                                                <option value="7.00">Indiana (7%)</option>
-                                                <option value="6.00">Iowa (6%)</option>
-                                                <option value="6.50">Kansas (6.5%)</option>
-                                                <option value="6.00">Kentucky (6%)</option>
-                                                <option value="4.45">Louisiana (4.45%)</option>
-                                                <option value="5.50">Maine (5.5%)</option>
-                                                <option value="6.00">Maryland (6%)</option>
-                                                <option value="6.25">Massachusetts (6.25%)</option>
-                                                <option value="6.00">Michigan (6%)</option>
-                                                <option value="6.88">Minnesota (6.88%)</option>
-                                                <option value="7.00">Mississippi (7%)</option>
-                                                <option value="4.23">Missouri (4.23%)</option>
-                                                <option value="0.00">Montana (0%)</option>
-                                                <option value="5.50">Nebraska (5.5%)</option>
-                                                <option value="4.60">Nevada (4.6%)</option>
-                                                <option value="0.00">New Hampshire (0%)</option>
-                                                <option value="6.63">New Jersey (6.63%)</option>
-                                                <option value="4.00">New Mexico (4%)</option>
-                                                <option value="4.00">New York (4%)</option>
-                                                <option value="4.75">North Carolina (4.75%)</option>
-                                                <option value="5.00">North Dakota (5%)</option>
-                                                <option value="5.75">Ohio (5.75%)</option>
-                                                <option value="4.50">Oklahoma (4.5%)</option>
-                                                <option value="0.00">Oregon (0%)</option>
-                                                <option value="6.00">Pennsylvania (6%)</option>
-                                                <option value="7.00">Rhode Island (7%)</option>
-                                                <option value="5.00">South Carolina (5%)</option>
-                                                <option value="4.00">South Dakota (4%)</option>
-                                                <option value="7.00">Tennessee (7%)</option>
-                                                <option value="6.25">Texas (6.25%)</option>
-                                                <option value="4.85">Utah (4.85%)</option>
-                                                <option value="6.00">Vermont (6%)</option>
-                                                <option value="4.15">Virginia (4.15%)</option>
-                                                <option value="6.50">Washington (6.5%)</option>
-                                                <option value="5.00">West Virginia (5%)</option>
-                                                <option value="5.00">Wisconsin (5%)</option>
-                                                <option value="4.00">Wyoming (4%)</option>
-                                            </select>
-                                        </div>
-                                
-                                        <!-- Vehicle Tax -->
-                                        <div class="col-md-4">
-                                            <label class="form-label">Vehicle Tax:</label>
-                                            <input type="text" class="form-control" id="vehicleTax" value="0.00" readonly disabled>
-                                        </div>
-                                
-                                        <!-- Dealer Fees -->
-                                        <div class="col-md-4">
-                                            <label for="dealerFees" class="form-label" data-bs-toggle="tooltip" title="Additional fees charged by the dealer, such as documentation fees.">Dealer Fees:</label>
-                                            <input type="number" class="form-control" id="dealerFees" value="0">
-                                        </div>
-                                
-                                        <!-- Down Payment -->
-                                        <div class="col-md-4">
-                                            <label for="downPayment" class="form-label" data-bs-toggle="tooltip" title="Down Payment.">Down Payment:</label>
-                                            <input type="number" class="form-control" id="downPayment" value="0">
-                                        </div>
-                        
-                                        <!-- Vehicle Registration Fees -->
-                                        <div class="col-md-4">
-                                            <label for="registrationDropdown" class="form-label required" data-bs-toggle="tooltip" title="Select your state to auto-fill the registration fee.">Registration Fee:</label>
-                                            <select class="form-select" id="registrationDropdown" required>
-                                                <option value="" selected disabled>Select State</option>
-                                            </select>
-                                        </div>
-
-                                        <!-- APR -->
-                                        <div class="col-md-4">
-                                            <label for="aprDropdown" class="form-label required" data-bs-toggle="tooltip" title="Select or enter the Annual Percentage Rate for the loan.">APR:</label>
-                                            <select class="form-select mb-2" id="aprDropdown" required>
-                                                <option value="" selected disabled>Select APR</option>
-                                            </select>
-                                            <input type="number" class="form-control d-none" id="customApr" placeholder="Enter custom APR (%)" step="0.01" />
-                                            <div class="invalid-feedback">Please select a valid APR.</div>
-                                        </div>
-                        
-                                        <div class="row g-3 mt-1">
-                                            <label class="form-label">Options and Add-ons</label>
-                                            <div class="col-md-12">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="addWarranty">
-                                                    <label class="form-check-label" for="addWarranty">Include Warranty ($1,500)</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="addGapInsurance">
-                                                    <label class="form-check-label" for="addGapInsurance">Include GAP Insurance ($1,000)</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="addServicePackage">
-                                                    <label class="form-check-label" for="addServicePackage">Service Package ($2,000)</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                
-                                        <!-- Trade-In Section -->
-                                        <hr class="my-4">
-
-                                        <div class="col-md-12 npm">
-                                            <div class="form-check form-switch mb-2">
-                                                <input class="form-check-input" type="checkbox" id="toggleTradeIn">
-                                                <label class="form-label form-check-label" for="toggleTradeIn">Include Trade-In?</label>
-                                            </div>
-                                        </div>
-                                
-                                        <div id="tradeInSection" style="display: none;" class="row g-3">
-                                            <div class="col-md-6">
-                                                <label for="tradeIn" class="form-label" data-bs-toggle="tooltip" title="Value of your current car for trade-in.">Trade-In Value:</label>
-                                                <input type="number" class="form-control" id="tradeIn" value="0">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="amountOwed" class="form-label" data-bs-toggle="tooltip" title="Remaining loan balance on your trade-in vehicle.">Amount Owed on Trade-In:</label>
-                                                <input type="number" class="form-control" id="amountOwed" value="0">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <label class="form-label">Trade-In Tax Savings:</label>
-                                                <input type="text" class="form-control" id="tradeTaxSavings" value="0.00" readonly disabled>
-                                            </div>
-                                        </div>
-                                        
-                                
-                                        <!-- Loan Term -->
-                                        <div class="col-md-12">
-                                            <label class="form-label">Loan Term (Months):</label>
-                                            <div class="btn-group d-flex" role="group" aria-label="Loan Term">
-                                                <input type="radio" class="btn-check" name="loanTerm" id="term36" value="36" autocomplete="off">
-                                                <label class="btn btn-outline-secondary flex-fill" for="term36">36</label>
-                                        
-                                                <input type="radio" class="btn-check" name="loanTerm" id="term48" value="48" autocomplete="off">
-                                                <label class="btn btn-outline-secondary flex-fill" for="term48">48</label>
-                                        
-                                                <input type="radio" class="btn-check" name="loanTerm" id="term60" value="60" autocomplete="off">
-                                                <label class="btn btn-outline-secondary flex-fill" for="term60">60</label>
-                                        
-                                                <input type="radio" class="btn-check" name="loanTerm" id="term72" value="72" autocomplete="off" checked>
-                                                <label class="btn btn-outline-secondary flex-fill" for="term72">72</label>
-                                        
-                                                <input type="radio" class="btn-check" name="loanTerm" id="term84" value="84" autocomplete="off">
-                                                <label class="btn btn-outline-secondary flex-fill" for="term84">84</label>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-12">
-                                            <label for="monthlyIncome" class="form-label required" data-bs-toggle="tooltip" title="Enter your gross monthly income to help calculate risk and determine your approval likelihood.">Your Monthly Income:</label>
-                                            <input type="number" class="form-control" id="monthlyIncome" required>
-                                        </div>
-                                    </div>
-                                
-                                    <!-- Submit Button -->
+                            <!-- Form -->
+                            <form id="loanForm" class="needs-validation" novalidate>
+                                <div class="row g-3">
+                                    <!-- Car Price -->
                                     <div class="col-md-12">
-                                        <div class="mt-4">
-                                            <button type="button" class="btn btn-primary btn-lg w-100" id="calculateBtn">Calculate My Payment</button>
+                                        <label for="carPrice" class="form-label required" data-bs-toggle="tooltip" title="Total price of the car before taxes and fees.">Car Price:</label>
+                                        <input type="number" class="form-control" id="carPrice" required>
+                                        <div class="invalid-feedback">Please provide a valid car price.</div>
+                                    </div>
+                            
+                                    <!-- State Tax -->
+                                    <div class="col-md-4">
+                                        <label for="stateTax" class="form-label required" data-bs-toggle="tooltip" title="Sales tax rate based on your state.">Your State:</label>
+                                        <select class="form-select" id="stateTax">
+                                            <option value="0" selected>Select State</option>
+                                            <option value="0.00">Alaska (0%)</option>
+                                            <option value="4.00">Alabama (4%)</option>
+                                            <option value="6.60">Arizona (6.6%)</option>
+                                            <option value="6.50">Arkansas (6.5%)</option>
+                                            <option value="7.25">California (7.25%)</option>
+                                            <option value="2.90">Colorado (2.9%)</option>
+                                            <option value="6.35">Connecticut (6.35%)</option>
+                                            <option value="4.25">Delaware (No Sales Tax on Cars)</option>
+                                            <option value="6.00">Florida (6%)</option>
+                                            <option value="4.00">Georgia (4%)</option>
+                                            <option value="4.00">Hawaii (4%)</option>
+                                            <option value="6.00">Idaho (6%)</option>
+                                            <option value="6.25">Illinois (6.25%)</option>
+                                            <option value="7.00">Indiana (7%)</option>
+                                            <option value="6.00">Iowa (6%)</option>
+                                            <option value="6.50">Kansas (6.5%)</option>
+                                            <option value="6.00">Kentucky (6%)</option>
+                                            <option value="4.45">Louisiana (4.45%)</option>
+                                            <option value="5.50">Maine (5.5%)</option>
+                                            <option value="6.00">Maryland (6%)</option>
+                                            <option value="6.25">Massachusetts (6.25%)</option>
+                                            <option value="6.00">Michigan (6%)</option>
+                                            <option value="6.88">Minnesota (6.88%)</option>
+                                            <option value="7.00">Mississippi (7%)</option>
+                                            <option value="4.23">Missouri (4.23%)</option>
+                                            <option value="0.00">Montana (0%)</option>
+                                            <option value="5.50">Nebraska (5.5%)</option>
+                                            <option value="4.60">Nevada (4.6%)</option>
+                                            <option value="0.00">New Hampshire (0%)</option>
+                                            <option value="6.63">New Jersey (6.63%)</option>
+                                            <option value="4.00">New Mexico (4%)</option>
+                                            <option value="4.00">New York (4%)</option>
+                                            <option value="4.75">North Carolina (4.75%)</option>
+                                            <option value="5.00">North Dakota (5%)</option>
+                                            <option value="5.75">Ohio (5.75%)</option>
+                                            <option value="4.50">Oklahoma (4.5%)</option>
+                                            <option value="0.00">Oregon (0%)</option>
+                                            <option value="6.00">Pennsylvania (6%)</option>
+                                            <option value="7.00">Rhode Island (7%)</option>
+                                            <option value="5.00">South Carolina (5%)</option>
+                                            <option value="4.00">South Dakota (4%)</option>
+                                            <option value="7.00">Tennessee (7%)</option>
+                                            <option value="6.25">Texas (6.25%)</option>
+                                            <option value="4.85">Utah (4.85%)</option>
+                                            <option value="6.00">Vermont (6%)</option>
+                                            <option value="4.15">Virginia (4.15%)</option>
+                                            <option value="6.50">Washington (6.5%)</option>
+                                            <option value="5.00">West Virginia (5%)</option>
+                                            <option value="5.00">Wisconsin (5%)</option>
+                                            <option value="4.00">Wyoming (4%)</option>
+                                        </select>
+                                    </div>
+                            
+                                    <!-- Vehicle Tax -->
+                                    <div class="col-md-4">
+                                        <label class="form-label">Vehicle Tax:</label>
+                                        <input type="text" class="form-control" id="vehicleTax" value="0.00" readonly disabled>
+                                    </div>
+                            
+                                    <!-- Dealer Fees -->
+                                    <div class="col-md-4">
+                                        <label for="dealerFees" class="form-label" data-bs-toggle="tooltip" title="Additional fees charged by the dealer, such as documentation fees.">Dealer Fees:</label>
+                                        <input type="number" class="form-control" id="dealerFees" value="0">
+                                    </div>
+                            
+                                    <!-- Down Payment -->
+                                    <div class="col-md-4">
+                                        <label for="downPayment" class="form-label" data-bs-toggle="tooltip" title="Down Payment.">Down Payment:</label>
+                                        <input type="number" class="form-control" id="downPayment" value="0">
+                                    </div>
+                    
+                                    <!-- Vehicle Registration Fees -->
+                                    <div class="col-md-4">
+                                        <label for="registrationDropdown" class="form-label required" data-bs-toggle="tooltip" title="Select your state to auto-fill the registration fee.">Registration Fee:</label>
+                                        <select class="form-select" id="registrationDropdown" required>
+                                            <option value="" selected disabled>Select State</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- APR -->
+                                    <div class="col-md-4">
+                                        <label for="aprDropdown" class="form-label required" data-bs-toggle="tooltip" title="Select or enter the Annual Percentage Rate for the loan.">APR:</label>
+                                        <select class="form-select mb-2" id="aprDropdown" required>
+                                            <option value="" selected disabled>Select APR</option>
+                                        </select>
+                                        <input type="number" class="form-control d-none" id="customApr" placeholder="Enter custom APR (%)" step="0.01" />
+                                        <div class="invalid-feedback">Please select a valid APR.</div>
+                                    </div>
+                    
+                                    <div class="row g-3 mt-1">
+                                        <label class="form-label">Options and Add-ons</label>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="addWarranty">
+                                                <label class="form-check-label" for="addWarranty">Include Warranty ($1,500)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="addGapInsurance">
+                                                <label class="form-check-label" for="addGapInsurance">Include GAP Insurance ($1,000)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="addServicePackage">
+                                                <label class="form-check-label" for="addServicePackage">Service Package ($2,000)</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </form>
-                                
-                                
-                            </div>
+                                    
+                            
+                                    <!-- Trade-In Section -->
+                                    <hr class="my-4">
+
+                                    <div class="col-md-12 npm">
+                                        <div class="form-check form-switch mb-2">
+                                            <input class="form-check-input" type="checkbox" id="toggleTradeIn">
+                                            <label class="form-label form-check-label" for="toggleTradeIn">Include Trade-In?</label>
+                                        </div>
+                                    </div>
+                            
+                                    <div id="tradeInSection" style="display: none;" class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="tradeIn" class="form-label" data-bs-toggle="tooltip" title="Value of your current car for trade-in.">Trade-In Value:</label>
+                                            <input type="number" class="form-control" id="tradeIn" value="0">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="amountOwed" class="form-label" data-bs-toggle="tooltip" title="Remaining loan balance on your trade-in vehicle.">Amount Owed on Trade-In:</label>
+                                            <input type="number" class="form-control" id="amountOwed" value="0">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="form-label">Trade-In Tax Savings:</label>
+                                            <input type="text" class="form-control" id="tradeTaxSavings" value="0.00" readonly disabled>
+                                        </div>
+                                    </div>
+                                    
+                            
+                                    <!-- Loan Term -->
+                                    <div class="col-md-12">
+                                        <label class="form-label">Loan Term (Months):</label>
+                                        <div class="btn-group d-flex" role="group" aria-label="Loan Term">
+                                            <input type="radio" class="btn-check" name="loanTerm" id="term36" value="36" autocomplete="off">
+                                            <label class="btn btn-outline-secondary flex-fill" for="term36">36</label>
+                                    
+                                            <input type="radio" class="btn-check" name="loanTerm" id="term48" value="48" autocomplete="off">
+                                            <label class="btn btn-outline-secondary flex-fill" for="term48">48</label>
+                                    
+                                            <input type="radio" class="btn-check" name="loanTerm" id="term60" value="60" autocomplete="off">
+                                            <label class="btn btn-outline-secondary flex-fill" for="term60">60</label>
+                                    
+                                            <input type="radio" class="btn-check" name="loanTerm" id="term72" value="72" autocomplete="off" checked>
+                                            <label class="btn btn-outline-secondary flex-fill" for="term72">72</label>
+                                    
+                                            <input type="radio" class="btn-check" name="loanTerm" id="term84" value="84" autocomplete="off">
+                                            <label class="btn btn-outline-secondary flex-fill" for="term84">84</label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <label for="monthlyIncome" class="form-label required" data-bs-toggle="tooltip" title="Enter your gross monthly income to help calculate risk and determine your approval likelihood.">Your Monthly Income:</label>
+                                        <input type="number" class="form-control" id="monthlyIncome" required>
+                                    </div>
+                                </div>
+                            
+                                <!-- Submit Button -->
+                                <div class="col-md-12">
+                                    <div class="mt-4">
+                                        <button type="button" class="btn btn-primary btn-lg w-100" id="calculateBtn">Calculate My Payment</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            
                         </div>
                     </div>
-                    
                 </div>
-            </div>
-        </section>
-
-
-
-        <div class="container py-5" id="emptyStateSection">
-            <div class="col-md-12 d-flex justify-content-center border-0 rounded-4">
-                <!-- Empty State Section -->
-                <div class="text-center py-5 px-4 bg-light rad-def">
-                    <div class="icon-wrapper mb-4">
-                        <i class="text-secondary size-32" data-feather="clock"></i>
-                    </div>
-                    <h5 class="text-secondary">Your Results Will Display Here</h5>
-                    <p class="text-muted"  style="max-width: 1024px;">
-                        Enter your data above to calculate your car payment, assess risks, and view an amortization schedule.
-                        You'll also receive personalized insights like GAP insurance recommendations and risk analysis.
-                    </p>
-                </div>
+                
             </div>
         </div>
+    </section>
+
+    <div class="container py-5" id="emptyStateSection">
+        <div class="col-md-12 d-flex justify-content-center border-0 rounded-4">
+            <!-- Empty State Section -->
+            <div class="text-center py-5 px-4 bg-light rad-def">
+                <div class="icon-wrapper mb-4">
+                    <i class="text-secondary size-32" data-feather="clock"></i>
+                </div>
+                <h5 class="text-secondary">Your Results Will Display Here</h5>
+                <p class="text-muted"  style="max-width: 1024px;">
+                    Enter your data above to calculate your car payment, assess risks, and view an amortization schedule.
+                    You'll also receive personalized insights like GAP insurance recommendations and risk analysis.
+                </p>
+            </div>
+        </div>
+    </div>
         
-
-    
-
-
     <div class="container mt-5">
 
         <div id="calculationResults" class="container">
@@ -535,9 +527,6 @@
         <a href="#navbartop"><i style="color: #fff;" class="bi bi-arrow-up"></i></a>
     </button>
     
-
-    
-
     <!-- Footer Section -->
     <footer class="py-3 mt-5">
         <div class="container text-center">
@@ -546,13 +535,11 @@
         </div>
     </footer>
 
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script>
         feather.replace();
     </script>
-   
 </body>
 </html>
