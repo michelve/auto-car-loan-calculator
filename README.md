@@ -3,6 +3,21 @@
 ## Overview
 The Advanced Auto Loan Calculator is a web-based application designed to help users calculate car payments, assess risks, and view amortization schedules. It provides additional insights like GAP insurance recommendations, affordability analysis, and approval probabilities.
 
+
+## Preview
+
+Here are some screenshots of the application in action:
+
+![Home Page](assets/img/001.png)
+![Home Page](assets/img/002.png)
+![Home Page](assets/img/003.png)
+![Home Page](assets/img/004.png)
+
+
+### Live Demo
+Explore the live demo of the application here: [Auto Car Loan Calculator](https://michelve.github.io/auto-car-loan-calculator/)
+
+
 ## Features
 - **Dynamic Loan Calculation**: Calculates monthly payments, loan amount, and interest.
 - **Risk Assessment**: Analyzes default risk probability and debt-to-income ratio.
