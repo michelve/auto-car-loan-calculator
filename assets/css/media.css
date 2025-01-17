@@ -1,0 +1,77 @@
+/* General Reset for Print */
+body, html {
+    margin: 0;
+    padding: 0;
+    background: none; /* Remove backgrounds */
+    color: #000; /* Use black text for readability */
+    font-family: Arial, sans-serif; /* Simple and readable font */
+    font-size: 12pt; /* Standard print size */
+}
+
+/* Hide Unnecessary Elements */
+nav, footer, .buttons, .no-print, .ads, .hero, #scrollToTopBtn, .table-content {
+    display: none !important; 
+}
+
+/* Optimize Layout */
+.container, .card-body, .row, #results {
+    width: 100% !important; /* Use full width of the page */
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+.content, .main-section {
+    padding: 1cm; /* Add spacing for print */
+    border: none; /* Remove borders */
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #000; /* Ensure headings are black */
+    font-weight: bold;
+}
+
+/* Links */
+a {
+    color: #000; /* Black text for links */
+    text-decoration: none; /* Remove underline for print */
+}
+a:after {
+    content: " (" attr(href) ")"; /* Append URL to links for context */
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1cm;
+}
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto; /* Scale images appropriately */
+}
+
+/* Avoid Breaking Elements Across Pages */
+.page-break {
+    page-break-before: always; /* Force page breaks for sections */
+}
+
+@page {
+    margin: 1cm; /* Define page margins */
+}
+#amortizationSchedule-all table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1cm;
+}
+#amortizationSchedule-all table tr td{
+    font-size: 14px;
+}

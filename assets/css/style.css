@@ -1,0 +1,189 @@
+/* General Styles */
+html, body {
+    background: linear-gradient(to left, #edf0f5, #eceff2);
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", Helvetica, Arial,serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+p {
+    font-family: "Roboto", "Plus Jakarta Sans", Helvetica, Arial, serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.hero {
+    background: url('../img/bg2.jpeg') no-repeat top right, linear-gradient(to bottom right, #1a1a2e, #16213e);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+    color: white;
+    padding: 48px 0;
+    position: relative;
+    border-radius: 48px;
+    margin: 32px;
+}
+.npm{
+    padding-top: 0;
+    margin-top: 0;
+}
+.form-label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+
+}
+.btn {
+    font-weight: 700;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.list-unstyled li {
+    font-weight: 300;
+}
+
+.hero .card {
+    border-radius: 15px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+.h5, h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.card.border-0.position-sticky {
+    background-color: none;
+}
+
+#loanSummarySection h4 {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 22px;
+    color: #495057;
+}
+
+/* Utility Classes */
+.price-range {
+    background-color: #eeeeee;
+    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#calculationResults {
+    display: none; 
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Summary Section */
+.summary {
+    background-color: #E9F2FF;
+}
+
+.option-badge {
+    background-color: #16213e;
+    color: #E9F2FF;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+.text-center.py-5.px-4.bg-light.rad-def {
+    border-radius: 17px;
+}
+
+/* Trade-In Section */
+#tradeInSection {
+    padding: 8px 19px;
+    background: #e8ebed;
+    border-radius: 11px;
+    margin-top: -1px;
+}
+
+/* Risk Analysis */
+#riskAnalysisSection .card {
+    padding: 16px 0;
+    border-radius: 15px;
+}
+
+#riskAnalysisSection .card svg {
+    margin: 0 0 16px 0;
+}
+
+.size-32 {
+    width: 32px;
+    height: 32px;
+}
+
+.size-48 {
+    width: 48px;
+    height: 48px;
+}
+
+/* Gradient Backgrounds */
+.bg-red {
+    background: linear-gradient(135deg, #f8cdda 0%, #f6d5f7 50%, #fbe9d7 100%);
+    background-blend-mode: soft-light;
+}
+
+.bg-blue-1 {
+    background: linear-gradient(120deg, #dbeafe 0%, #e9f1ff 50%, #f4f9ff 100%);
+    background-blend-mode: overlay;
+}
+
+.bg-blue-2 {
+    background: linear-gradient(135deg, #cad0ff 0%, #dee4ff 50%, #e3e3e3 100%);
+    background-blend-mode: lighten;
+}
+
+
+/* Blurred Card */
+.card-blur {
+    background: rgba(255, 255, 255, 0.98); /* Semi-transparent white */
+    -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+    backdrop-filter: blur(10px); /* Modern browsers */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.form-label.required:after {
+    content:"*";
+    color:red;
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#scrollToTopBtn:hover {
+    transform: scale(1.1);
+}
