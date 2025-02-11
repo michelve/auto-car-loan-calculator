@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Use our advanced mortgage calculator to find the ideal home financing plan in seconds. Explore monthly payments, potential savings, and more with ease.">
+    <meta name="keywords" content="Mortgage, Mortgage Financing, Monthly Mortgage Payments, Loan Interest">
+    <meta name="author" content="Michel Velis">
+    <title>Mortgage Loan Calculator | Michel Velis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media.css" media="print">
+</head>
+<body class="text-dark">
+
+    <!-- Hero Section -->
+    <section class="hero mortage">
+        <div class="container">
+            <!-- Image and text -->
+            <nav class="navbar navbar-expand-lg navbar-light" id="navbartop">
+                <a class="navbar-brand text-dark" href="/">
+                    <i data-feather="book-open"></i>  Mortgage Loan Calculator
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav">
+           
+                    <li class="nav-item">
+                      <a class="nav-link" href="auto.html">Auto Loan</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="mortgage.html">Mortage Loan</a>
+                    </li>
+   
+                    
+                  </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-5 blur-d">
+                    <div class="">
+                        <h1 class="fw-bold mt-5" style="max-width: 560px;">Calculate your estimate today and uncover the best tips!</h1>
+                        <p class="fs-5 text-dark mt-3 mb-5 fw-200" style="max-width: 560px;">
+                          Use our advanced mortgage calculator to find the ideal home financing plan in seconds. Explore monthly payments, potential savings, and more with ease.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card shadow card-blur">
+                        <div class="card-body" id="calculatorForm">
+
+                                
+                                <form id="mortgage-calculator"  class="needs-validation" novalidate>
+                                    <div class="row">
+                                      <!-- Home Price -->
+                                      <div class="col-md-6 mb-3">
+                                        <label for="homePrice" class="form-label required">Home Price</label>
+                                        <input type="number" class="form-control" id="homePrice" placeholder="Enter home price" min="0" required>
+                                      </div>
+                                
+                                      <!-- State Selection -->
+                                      <div class="col-md-6 mb-3">
+                                        <label for="state" class="form-label required">State</label>
+                                        <select class="form-select" id="state" required>
+                                          <option value="" disabled selected >Select your state</option>
+                                         
+                                        </select>
+                                      </div>
+                                    </div>
+                                
+                                    <div class="row">
+                                      <!-- Loan Type (Button Group) -->
+                                      <div class="col-md-6 mb-3">
+                                        <label class="form-label">Loan Type</label>
+                                        <div class="btn-group w-100" role="group" id="loanTypeGroup">
+                                          <input type="radio" class="btn-check" name="loanType" id="fha" value="fha" autocomplete="off" checked>
+                                          <label class="btn btn-outline-secondary" for="fha">FHA</label>
+                                
+                                          <input type="radio" class="btn-check" name="loanType" id="conventional" value="conventional" autocomplete="off">
+                                          <label class="btn btn-outline-secondary" for="conventional">Conventional</label>
+                                        </div>
+                                      </div>
+                                
+                                      <!-- Loan Length (Button Group) -->
+                                      <div class="col-md-6 mb-3">
+                                        <label class="form-label">Loan Length (years)</label>
+                                        <div class="btn-group w-100" role="group" id="loanLengthGroup">
+                                          <input type="radio" class="btn-check" name="loanLength" id="loan15" value="15" autocomplete="off">
+                                          <label class="btn btn-outline-secondary" for="loan15">15</label>
+                                
+                                          <input type="radio" class="btn-check" name="loanLength" id="loan20" value="20" autocomplete="off">
+                                          <label class="btn btn-outline-secondary" for="loan20">20</label>
+                                
+                                          <input type="radio" class="btn-check" name="loanLength" id="loan30" value="30" autocomplete="off" checked>
+                                          <label class="btn btn-outline-secondary" for="loan30">30</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                
+                                    <div class="row">
+                                      <!-- Interest Rate -->
+                                      <div class="col-md-4 mb-3">
+                                        <label for="interestRate" class="form-label required" required>Loan Interest Rate (%)</label>
+                                        <input type="number" class="form-control" id="interestRate" placeholder="Enter interest rate" step="0.01">
+                                      </div>
+                                
+                                      <!-- Down Payment -->
+                                      <div class="col-md-4 mb-3">
+                                        <label for="downPayment" class="form-label">Down Payment (%)</label>
+                                        <input type="number" class="form-control" id="downPayment" placeholder="Enter percentage" min="0" max="100">
+                                      </div>
+                                
+                                      <!-- HOA Fees -->
+                                      <div class="col-md-4 mb-3">
+                                        <label for="hoaFees" class="form-label">HOA Fees (Monthly)</label>
+                                        <input type="number" class="form-control" id="hoaFees" placeholder="Enter HOA fees" min="0">
+                                      </div>
+                                    </div>
+                                
+                                    <div class="row">
+                                      <!-- Home Insurance (Monthly) -->
+                                      <div class="col-md-6 mb-3">
+                                        <label for="homeInsurance" class="form-label required">Home Insurance (Monthly)</label>
+                                        <input type="number" class="form-control" id="homeInsurance" placeholder="Enter monthly home insurance cost" min="0" required>
+                                      </div>
+                                        <!-- Credit Score Dropdown -->
+                                        <div class="col-md-6 mb-3">
+                                          <label for="creditScore" class="form-label required">Credit Score</label>
+                                          <select class="form-select" id="creditScore" required>
+                                            <option value="" disabled selected>Select your credit score range</option>
+                                            <option value="800">800+ (Excellent - Best Rates)</option>
+                                            <option value="740">740-799 (Very Good - Great Rates)</option>
+                                            <option value="700">700-739 (Good - Competitive Rates)</option>
+                                            <option value="660">660-699 (Fair - Moderate Rates)</option>
+                                            <option value="620">620-659 (Poor - Higher Rates & PMI Required)</option>
+                                            <option value="580">580-619 (Subprime - Limited Loan Options)</option>
+                                            <option value="300">Below 580 (Risky - May Not Qualify)</option>
+                                          </select>
+                                        </div>
+                              
+                                    </div>
+                                
+                                    <button type="button" class="btn btn-primary w-100" id="calculate">Calculate</button>
+                                  </form>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <div class="container py-5" id="emptyStateSection">
+        <div class="col-md-12 d-flex justify-content-center border-0 rounded-4">
+            <!-- Empty State Section -->
+            <div class="text-center py-5 px-4 bg-light rad-def">
+                <div class="icon-wrapper mb-4">
+                    <i class="text-secondary size-32" data-feather="clock"></i>
+                </div>
+                <h5 class="text-secondary">Your Results Will Display Here</h5>
+                <p class="text-muted"  style="max-width: 1024px;">
+                    Enter your data above to calculate your mortgage payment, assess risks.
+                    You'll also receive personalized insights and recommendations and risk analysis.
+                </p>
+            </div>
+        </div>
+    </div>
+        
+    <div class="container mt-5">
+
+        <div id="results" class="mt-4" style="display:none;">
+            <h4 class="mb-3 text-center">Calculation Summary</h4>
+          
+            <div class="row">
+      
+          
+              <!-- Summary Cards -->
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-12 mb-3">
+                    <div class="card shadow-sm border-primary">
+                      <div class="card-body">
+                        <h5 class="card-title text-primary">Estimated Monthly Payment</h5>
+                        <p class="card-text"><span id="result-monthlyPayment" class="fw-bold">$0.00</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <div class="card shadow-sm">
+                      <div class="card-body">
+                        <h5 class="card-title">PMI (Monthly)</h5>
+                        <p class="card-text"><span id="result-pmi" class="fw-bold">$0.00</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <div class="card shadow-sm">
+                      <div class="card-body">
+                        <h5 class="card-title">Property Tax (Yearly)</h5>
+                        <p class="card-text"><span id="result-propertyTax" class="fw-bold">$0.00</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <div class="card shadow-sm">
+                      <div class="card-body">
+                        <h5 class="card-title">Closing Cost Estimate</h5>
+                        <p class="card-text"><span id="result-closingCost" class="fw-bold">$0.00</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <div class="card shadow-sm">
+                      <div class="card-body">
+                        <h5 class="card-title">Total Down Payment</h5>
+                        <p class="card-text"><span id="result-downPayment" class="fw-bold">$0.00</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="card shadow-sm border-danger">
+                      <div class="card-body">
+                        <h5 class="card-title text-danger">Total Cash Needed at Closing</h5>
+                        <p class="card-text text-danger"><span id="result-totalCash" class="fw-bold">$0.00</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Loan Insights -->
+            <div class="mt-4">
+              <div class="card shadow-sm border-info">
+                <div class="card-body">
+                  <h5 class="card-title text-info">Loan Health Insights</h5>
+                  <p class="card-text" id="loan-recommendation">No recommendations yet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+
+    <button id="scrollToTopBtn" class="btn btn-primary rounded-circle">
+        <a href="#navbartop"><i style="color: #fff;" class="bi bi-arrow-up"></i></a>
+    </button>
+    
+    <!-- Footer Section -->
+    <footer class="py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-0 small">&copy; 2025 Loan Calculator. All Rights Reserved.</p>
+            <p class="mb-0 small">Designed and coded by <i class="bi bi-heart-fill text-danger"></i> Michel Velis.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/mortgage.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

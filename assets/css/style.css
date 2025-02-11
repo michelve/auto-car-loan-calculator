@@ -1,11 +1,13 @@
 /* General Styles */
 html, body {
     background: linear-gradient(to left, #edf0f5, #eceff2);
-    margin: 0;
-    padding: 0;
     font-family: "Plus Jakarta Sans", Helvetica, Arial,serif;
     font-optical-sizing: auto;
     font-style: normal;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 p {
@@ -13,6 +15,11 @@ p {
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 400;
+}
+.index-bg {
+
+
+
 }
 
 .hero {
@@ -25,6 +32,23 @@ p {
     position: relative;
     border-radius: 48px;
     margin: 32px;
+}
+.hero.mortage {
+    background: url('../img/bg4.jpg') no-repeat bottom right, linear-gradient(to bottom right, #1a1a2e, #16213e);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    color: #111;
+    padding: 48px 0;
+    position: relative;
+    border-radius: 48px;
+    margin: 32px;
+}
+.hero.mortage p, .hero.mortage ul, .hero.mortage span, .hero.mortage p.text-light, .hero.mortage > .text-light{
+    color: #111 !important;   
+}
+.blur {
+    backdrop-filter: blur(20px);
 }
 .npm{
     padding-top: 0;

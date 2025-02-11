@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="index-bg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Advanced Auto Loan Calculator to calculate monthly payments, interest, trade-in equity, and total loan costs for auto purchases. Simple, accurate, and responsive.">
     <meta name="keywords" content="Auto Loan Calculator, Car Loan Calculator, Trade-in Value, Auto Financing, Monthly Car Payments, Loan Interest">
     <meta name="author" content="Michel Velis">
-    <title>Auto Loan Calculator | Michel Velis</title>
+    <title>Calculator Tools | Michel Velis</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -18,519 +18,65 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/media.css" media="print">
+    <style>
+        body, html {
+            height: 100%;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .card-icon {
+            font-size: 56px;
+            color: #007bff;
+        }
+    </style>
 </head>
 <body class="text-dark">
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <!-- Image and text -->
-            <nav class="navbar navbar-dark" id="navbartop">
-                <a class="navbar-brand" href="/">
-                    <i data-feather="book-open"></i>  Auto Loan Calculator
-                </a>
-            </nav>
-        </div>
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="">
-                        <h1 class="fw-bold mt-5" style="max-width: 560px;">Get the Right Payment, Every Time</h1>
-                        <p class="fs-5 text-light mt-3 mb-5 fw-200" style="max-width: 560px;">
-                            With our powerful loan calculator, discover your perfect car financing plan in just a few clicks. Get insights on monthly payments, trade-in benefits, and more.
-                        </p>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <i class="bi bi-calculator-fill text-primary me-2"></i>
-                                Accurate estimates tailored to your budget.
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-cash-coin text-primary me-2"></i>
-                                Evaluate loan terms, APRs, and down payments easily.
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-graph-up-arrow text-primary me-2"></i>
-                                Analyze your approval rating risk and affordability.
-                            </li>
-                            <li class="mb-3">
-                                <i class="bi bi-shield-check text-primary me-2"></i>
-                                Find out if you need GAP Insurance based on trade-in equity.
-                            </li>
-                        </ul>
-                        
-                        <p class="mt-5" style="font-size: 13px;max-width: 560px;">
-                            <small><strong>Disclaimer:</strong> Some prices, such as GAP insurance, extended warranty, or interest rates, are based on industry averages and may not reflect exact values. However, the calculator provides highly accurate payment estimates to guide your financial decisions.</small>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="card shadow card-blur">
-                        <div class="card-body" id="calculatorForm">
-
-                            <!-- Form -->
-                            <form id="loanForm" class="needs-validation" novalidate>
-                                <div class="row g-3">
-                                    <!-- Car Price -->
-                                    <div class="col-md-12">
-                                        <label for="carPrice" class="form-label required" data-bs-toggle="tooltip" title="Total price of the car before taxes and fees.">Car Price:</label>
-                                        <input type="number" class="form-control" id="carPrice" required>
-                                        <div class="invalid-feedback">Please provide a valid car price.</div>
-                                    </div>
-                            
-                                    <!-- State Tax -->
-                                    <div class="col-md-4">
-                                        <label for="stateTax" class="form-label required" data-bs-toggle="tooltip" title="Sales tax rate based on your state.">Your State:</label>
-                                        <select class="form-select" id="stateTax">
-                                            <option value="0" selected>Select State</option>
-                                            <option value="0.00">Alaska (0%)</option>
-                                            <option value="4.00">Alabama (4%)</option>
-                                            <option value="6.60">Arizona (6.6%)</option>
-                                            <option value="6.50">Arkansas (6.5%)</option>
-                                            <option value="7.25">California (7.25%)</option>
-                                            <option value="2.90">Colorado (2.9%)</option>
-                                            <option value="6.35">Connecticut (6.35%)</option>
-                                            <option value="4.25">Delaware (No Sales Tax on Cars)</option>
-                                            <option value="6.00">Florida (6%)</option>
-                                            <option value="4.00">Georgia (4%)</option>
-                                            <option value="4.00">Hawaii (4%)</option>
-                                            <option value="6.00">Idaho (6%)</option>
-                                            <option value="6.25">Illinois (6.25%)</option>
-                                            <option value="7.00">Indiana (7%)</option>
-                                            <option value="6.00">Iowa (6%)</option>
-                                            <option value="6.50">Kansas (6.5%)</option>
-                                            <option value="6.00">Kentucky (6%)</option>
-                                            <option value="4.45">Louisiana (4.45%)</option>
-                                            <option value="5.50">Maine (5.5%)</option>
-                                            <option value="6.00">Maryland (6%)</option>
-                                            <option value="6.25">Massachusetts (6.25%)</option>
-                                            <option value="6.00">Michigan (6%)</option>
-                                            <option value="6.88">Minnesota (6.88%)</option>
-                                            <option value="7.00">Mississippi (7%)</option>
-                                            <option value="4.23">Missouri (4.23%)</option>
-                                            <option value="0.00">Montana (0%)</option>
-                                            <option value="5.50">Nebraska (5.5%)</option>
-                                            <option value="4.60">Nevada (4.6%)</option>
-                                            <option value="0.00">New Hampshire (0%)</option>
-                                            <option value="6.63">New Jersey (6.63%)</option>
-                                            <option value="4.00">New Mexico (4%)</option>
-                                            <option value="4.00">New York (4%)</option>
-                                            <option value="4.75">North Carolina (4.75%)</option>
-                                            <option value="5.00">North Dakota (5%)</option>
-                                            <option value="5.75">Ohio (5.75%)</option>
-                                            <option value="4.50">Oklahoma (4.5%)</option>
-                                            <option value="0.00">Oregon (0%)</option>
-                                            <option value="6.00">Pennsylvania (6%)</option>
-                                            <option value="7.00">Rhode Island (7%)</option>
-                                            <option value="5.00">South Carolina (5%)</option>
-                                            <option value="4.00">South Dakota (4%)</option>
-                                            <option value="7.00">Tennessee (7%)</option>
-                                            <option value="6.25">Texas (6.25%)</option>
-                                            <option value="4.85">Utah (4.85%)</option>
-                                            <option value="6.00">Vermont (6%)</option>
-                                            <option value="4.15">Virginia (4.15%)</option>
-                                            <option value="6.50">Washington (6.5%)</option>
-                                            <option value="5.00">West Virginia (5%)</option>
-                                            <option value="5.00">Wisconsin (5%)</option>
-                                            <option value="4.00">Wyoming (4%)</option>
-                                        </select>
-                                    </div>
-                            
-                                    <!-- Vehicle Tax -->
-                                    <div class="col-md-4">
-                                        <label class="form-label">Vehicle Tax:</label>
-                                        <input type="text" class="form-control" id="vehicleTax" value="0.00" readonly disabled>
-                                    </div>
-                            
-                                    <!-- Dealer Fees -->
-                                    <div class="col-md-4">
-                                        <label for="dealerFees" class="form-label" data-bs-toggle="tooltip" title="Additional fees charged by the dealer, such as documentation fees.">Dealer Fees:</label>
-                                        <input type="number" class="form-control" id="dealerFees" value="0">
-                                    </div>
-                            
-                                    <!-- Down Payment -->
-                                    <div class="col-md-4">
-                                        <label for="downPayment" class="form-label" data-bs-toggle="tooltip" title="Down Payment.">Down Payment:</label>
-                                        <input type="number" class="form-control" id="downPayment" value="0">
-                                    </div>
-                    
-                                    <!-- Vehicle Registration Fees -->
-                                    <div class="col-md-4">
-                                        <label for="registrationDropdown" class="form-label required" data-bs-toggle="tooltip" title="Select your state to auto-fill the registration fee.">Registration Fee:</label>
-                                        <select class="form-select" id="registrationDropdown" required>
-                                            <option value="" selected disabled>Select State</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- APR -->
-                                    <div class="col-md-4">
-                                        <label for="aprDropdown" class="form-label required" data-bs-toggle="tooltip" title="Select or enter the Annual Percentage Rate for the loan.">APR:</label>
-                                        <select class="form-select mb-2" id="aprDropdown" required>
-                                            <option value="" selected disabled>Select APR</option>
-                                        </select>
-                                        <input type="number" class="form-control d-none" id="customApr" placeholder="Enter custom APR (%)" step="0.01" />
-                                        <div class="invalid-feedback">Please select a valid APR.</div>
-                                    </div>
-                    
-                                    <div class="row g-3 mt-1">
-                                        <label class="form-label">Options and Add-ons</label>
-                                        <div class="col-md-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="addWarranty">
-                                                <label class="form-check-label" for="addWarranty">Include Warranty ($1,500)</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="addGapInsurance">
-                                                <label class="form-check-label" for="addGapInsurance">Include GAP Insurance ($1,000)</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="addServicePackage">
-                                                <label class="form-check-label" for="addServicePackage">Service Package ($2,000)</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                            
-                                    <!-- Trade-In Section -->
-                                    <hr class="my-4">
-
-                                    <div class="col-md-12 npm">
-                                        <div class="form-check form-switch mb-2">
-                                            <input class="form-check-input" type="checkbox" id="toggleTradeIn">
-                                            <label class="form-label form-check-label" for="toggleTradeIn">Include Trade-In?</label>
-                                        </div>
-                                    </div>
-                            
-                                    <div id="tradeInSection" style="display: none;" class="row g-3">
-                                        <div class="col-md-6">
-                                            <label for="tradeIn" class="form-label" data-bs-toggle="tooltip" title="Value of your current car for trade-in.">Trade-In Value:</label>
-                                            <input type="number" class="form-control" id="tradeIn" value="0">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="amountOwed" class="form-label" data-bs-toggle="tooltip" title="Remaining loan balance on your trade-in vehicle.">Amount Owed on Trade-In:</label>
-                                            <input type="number" class="form-control" id="amountOwed" value="0">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label class="form-label">Trade-In Tax Savings:</label>
-                                            <input type="text" class="form-control" id="tradeTaxSavings" value="0.00" readonly disabled>
-                                        </div>
-                                    </div>
-                                    
-                            
-                                    <!-- Loan Term -->
-                                    <div class="col-md-12">
-                                        <label class="form-label">Loan Term (Months):</label>
-                                        <div class="btn-group d-flex" role="group" aria-label="Loan Term">
-                                            <input type="radio" class="btn-check" name="loanTerm" id="term36" value="36" autocomplete="off">
-                                            <label class="btn btn-outline-secondary flex-fill" for="term36">36</label>
-                                    
-                                            <input type="radio" class="btn-check" name="loanTerm" id="term48" value="48" autocomplete="off">
-                                            <label class="btn btn-outline-secondary flex-fill" for="term48">48</label>
-                                    
-                                            <input type="radio" class="btn-check" name="loanTerm" id="term60" value="60" autocomplete="off">
-                                            <label class="btn btn-outline-secondary flex-fill" for="term60">60</label>
-                                    
-                                            <input type="radio" class="btn-check" name="loanTerm" id="term72" value="72" autocomplete="off" checked>
-                                            <label class="btn btn-outline-secondary flex-fill" for="term72">72</label>
-                                    
-                                            <input type="radio" class="btn-check" name="loanTerm" id="term84" value="84" autocomplete="off">
-                                            <label class="btn btn-outline-secondary flex-fill" for="term84">84</label>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-12">
-                                        <label for="monthlyIncome" class="form-label required" data-bs-toggle="tooltip" title="Enter your gross monthly income to help calculate risk and determine your approval likelihood.">Your Monthly Income:</label>
-                                        <input type="number" class="form-control" id="monthlyIncome" required>
-                                    </div>
-                                </div>
-                            
-                                <!-- Submit Button -->
-                                <div class="col-md-12">
-                                    <div class="mt-4">
-                                        <button type="button" class="btn btn-primary btn-lg w-100" id="calculateBtn">Calculate My Payment</button>
-                                    </div>
-                                </div>
-                            </form>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-                
+    <div class="container mb-15 mt-15" style="margin: 5% auto;">
+        <div class="row text-center">
+            <div class="col-md-12" style="margin-bottom: 5%;">
+                <h1>Choose a Calculator</h1>
+                <div class="clear"></div>
             </div>
         </div>
-    </section>
-
-    <div class="container py-5" id="emptyStateSection">
-        <div class="col-md-12 d-flex justify-content-center border-0 rounded-4">
-            <!-- Empty State Section -->
-            <div class="text-center py-5 px-4 bg-light rad-def">
-                <div class="icon-wrapper mb-4">
-                    <i class="text-secondary size-32" data-feather="clock"></i>
-                </div>
-                <h5 class="text-secondary">Your Results Will Display Here</h5>
-                <p class="text-muted"  style="max-width: 1024px;">
-                    Enter your data above to calculate your car payment, assess risks, and view an amortization schedule.
-                    You'll also receive personalized insights like GAP insurance recommendations and risk analysis.
-                </p>
-            </div>
-        </div>
-    </div>
-        
-    <div class="container mt-5">
-
-        <div id="calculationResults" class="container">
-            <div class="row">
-                <!-- Table of Contents -->
-                <div class="col-md-3 table-content">
-                    <div class="card border-0 position-sticky" style="top: 100px;">
+        <div class="row text-center">
+            <!-- Mortgage Calculator Card -->
+            <div class="col-md-6 mb-4">
+                <a href="mortgage.html" class="text-decoration-none">
+                    <div class="card shadow-sm p-4">
                         <div class="card-body">
-                            <h5 class="fw-bold">Table of Contents</h5>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-action">
-                                    <a href="#loanSummarySection" class="text-decoration-none">Loan Summary</a>
-                                </li>
-                                <li class="list-group-item list-group-item-action">
-                                    <a href="#riskAnalysisSection" class="text-decoration-none">Risk Analysis</a>
-                                </li>
-                                <li class="list-group-item list-group-item-action">
-                                    <a href="#gapRecommendationSection" class="text-decoration-none">GAP Recommendation</a>
-                                </li>
-                                <li class="list-group-item list-group-item-action">
-                                    <a href="#amortizationSchedule" class="text-decoration-none">Amortization Schedule</a>
-                                </li>
-                            </ul>
+                            <i class="bi bi-house-door card-icon"></i>
+                            <h4 class="mt-3">Mortgage Calculator</h4>
+                            <p class="text-muted">Calculate your home loan payments.</p>
                         </div>
                     </div>
-                </div>
+                </a>
+            </div>
 
-        
-                <!-- Main Content -->
-                <div id="results" class="col-md-9 card-reults">
-                    <!-- Loan Summary Section -->
-                    <div id="loanSummarySection" class="sumamry-wrapper card-items">
-                        <h3 class="text-center mb-4 pt-5">Loan Summary</h3>
-                                <div class="row justify-content-center">
-                                <div class="col-md-12">
-                                    <div class="card rounded-4 border-0 bg-light text-dark">
-                                        <div class="card-body">
-                                            <!-- Header Row -->
-                                            <div class="row text-center fw-bold">
-                                                <div class="col-md-6 border-end">
-                                                    <h4>Your Selection</h4>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <h4>Alternative Options</h4>
-                                                </div>
-                                            </div>
-                                            <hr class="text-muted">
-
-                                            <!-- Content Row -->
-                                            <div class="row">
-                                                <!-- User Selection -->
-                                                <div class="col-md-6 border-end">
-                                                    <div class="mb-3 text-center">
-                                                        <h6 class="fw-bold">Monthly Payment</h6>
-                                                        <p class="fs-4 text-success animate-number" id="monthlyPayment"  data-value="0">$0.00</p>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-12 text-center">
-                                                            <h6 class="fw-bold">Loan Amount</h6>
-                                                            <p class="fs-5 text-primary animate-number" id="loanAmount"  data-value="0">$0.00</p>
-                                                        </div>
-                                                        <div class="col-12 text-center mt-2">
-                                                            <h6 class="fw-bold">Total Interest Paid</h6>
-                                                            <p class="fs-5 text-danger animate-number" id="totalInterest"  data-value="0">$0.00</p>
-                                                        </div>
-                                                        <div class="col-12 text-center mt-2">
-                                                            <h6 class="fw-bold">Loan Term</h6>
-                                                            <p class="fs-5 text-secondary animate-number" id="loanTermDisplay" data-value="0">72 Months</p>
-                                                        </div>
-                                                        <div class="col-12 text-center mt-2">
-                                                            <h6 class="fw-bold">Trade-In Tax Savings</h6>
-                                                            <p class="fs-5 text-info animate-number" id="taxSavings"  data-value="0">$0.00</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Alternative Financing Options -->
-                                                <div class="col-md-6">
-                                                    <div class="row text-center">
-                                                        <!-- Option 1 -->
-                                                        <div class="col-12">
-                                                            <span class="badge badge-pill badge-secondary option-badge">Option 1</span>
-                                                            <p class="text-muted">0% Down | 84 Months</p>
-                                                            <p class="fs-6 fw-bold text-primary">Monthly Payment: <span id="altOption1" class="text-success" data-value="0">$0.00</span></p>
-                                                        </div>
-                                                        <hr class="text-muted">
-                                                        <!-- Option 2 -->
-                                                        <div class="col-12">
-                                                            <span class="badge badge-pill badge-secondary option-badge">Option 2</span>
-                                                            <p class="text-muted">$3,000 Down | 72 Months</p>
-                                                            <p class="fs-6 fw-bold text-primary">Monthly Payment: <span id="altOption2" class="text-success" data-value="0">$0.00</span></p>
-                                                        </div>
-                                                        <hr class="text-muted">
-                                                        <!-- Option 3 -->
-                                                        <div class="col-12">
-                                                            <span class="badge badge-pill badge-secondary option-badge">Option 3</span>
-                                                            <p class="text-muted">$5,000 Down | 72 Months</p>
-                                                            <p class="fs-6 fw-bold text-primary">Monthly Payment: <span id="altOption3" class="text-success" data-value="0">$0.00</span></p>
-                                                        </div>
-                                                        <hr class="text-muted">
-                                                        <!-- Option 4 -->
-                                                        <div class="col-12">
-                                                            <span class="badge badge-pill badge-secondary option-badge">Option 4</span>
-                                                            <p class="text-muted">$7,000 Down | 84 Months</p>
-                                                            <p class="fs-6 fw-bold text-primary">Monthly Payment: <span id="altOption4" class="text-success" data-value="0">$0.00</span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Footer Note -->
-                                            <hr class="text-muted">
-                                            <p class="text-center text-muted small">*Alternative options are based on varying down payments and loan terms at the same APR.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-
-                    <!-- Risk Analysis Section -->
-                    <div id="riskAnalysisSection" class="mt-5 card-items">
-                        <div class="row justify-content-center">
-                            <!-- Risk Card 1 -->
-                            <div class="col-md-6 mb-4">
-                                <div class="card rounded-4 border-0 bg-blue-1">
-                                    <div class="card-body text-center">
-                                        <i class="text-primary size-32" data-feather="book-open"></i>
-                                        <h6 class="">Default Risk Probability</h6>
-                                        <p class="fs-4 text-danger" id="defaultRisk">0%</p>
-                                        <p class="text-muted small">Likelihood of default based on your inputs.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Risk Card 2 -->
-                            <div class="col-md-6 mb-4">
-                                <div class="card  border-0 rounded-4 bg-red">
-                                    <div class="card-body text-center">
-                                        <i class="text-danger size-32" data-feather="pie-chart"></i>
-                                        <h6 class="">Debt-to-Income Ratio</h6>
-                                        <p class="fs-4 text-primary" id="debtIncomeRatio">0%</p>
-                                        <p class="text-muted small">Comparison of monthly debt payments to income.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center mt-4">
-                            <p class="text-muted small">*Risk estimates are calculated based on your input data and national averages. Adjustments may be needed based on your specific financial situation.</p>
+            <!-- Auto Loan Calculator Card -->
+            <div class="col-md-6 mb-4">
+                <a href="auto.html" class="text-decoration-none">
+                    <div class="card shadow-sm p-4">
+                        <div class="card-body">
+                            <i class="bi bi-car-front card-icon"></i>
+                            <h4 class="mt-3">Auto Loan Calculator</h4>
+                            <p class="text-muted">Estimate your car loan payments.</p>
                         </div>
                     </div>
-
-                    <!-- GAP Recommendation Section -->
-                    <div id="gapRecommendationSection" class="mt-5 card-items">
-                        <div class="col-md-12">
-                            <div class="card border-0 bg-light rounded-4">
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <h3 class="fw-bold mb-4 mt-5">GAP Insurance Recommendation</h3>
-                                    </div>
-                                    <p class="text-muted text-center fs-5" style="max-width: 728px;margin: 0 auto;">
-                                        Understand whether GAP Insurance is suitable for your loan based on the trade-in equity and debt-to-income ratio.
-                                    </p>
-                                    <div class="row align-items-center justify-content-center py-4">
-                                        <!-- Icon Section -->
-                                        <div class="col-md-6 text-center">
-
-                                            <p class="fs-4 text-primary mt-2" id="gapRecommendation">No recommendation yet</p>
-                                        </div>
-                                    </div>
-                                    <!-- Divider -->
-                                    <div class="text-center my-4">
-                                        <hr class="w-75 mx-auto text-muted">
-                                    </div>
-                                    <!-- Reason Section -->
-                                    <p id="gapReason" class="text-muted text-center small px-3">
-                                        *Recommendations are based on your input and industry averages. For a detailed assessment, consult with a financial expert.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Amortization Schedule Section -->
-                    <div id="amortizationSchedule-all" class="mt-5 card-items">
-
-                        <div class="col-md-12">
-                            <div class="card border-0 bg-light rounded-4">
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <h3 class="text-center mb-4 mt-5">Amortization Schedule</h3>
-                                    </div>
-                   
-                                    
-                                    <div class="row align-items-center justify-content-center py-4">
-                                        <!-- Icon Section -->
-                                        <div class="col-md-12">
-                                            <div class="" id="amortizationSchedule">No recommendation yet</div>
-                                        </div>
-                                    </div>
-                
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Amortization Schedule Content Here -->
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
-
-    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer">
-        <!-- Car Price Toast -->
-        <div id="carPriceToast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    Please enter a valid Car Price.
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-        </div>
-        <!--  -->
-        <div id="loanToast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    Loan amount must be greater than zero. Please check your inputs.
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-        </div>
-        <!-- APR Toast -->
-        <div id="aprToast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    Please select a valid APR.
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-        </div>
-    </div>
-
-    <button id="scrollToTopBtn" class="btn btn-primary rounded-circle">
-        <a href="#navbartop"><i style="color: #fff;" class="bi bi-arrow-up"></i></a>
-    </button>
     
     <!-- Footer Section -->
     <footer class="py-3 mt-5">
         <div class="container text-center">
-            <p class="mb-0 small">&copy; 2025 Advanced Auto Loan Calculator. All Rights Reserved.</p>
+            <p class="mb-0 small">&copy; 2025 Loan Calculator. All Rights Reserved.</p>
             <p class="mb-0 small">Designed and coded by <i class="bi bi-heart-fill text-danger"></i> Michel Velis.</p>
         </div>
     </footer>
